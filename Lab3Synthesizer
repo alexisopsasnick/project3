@@ -2,7 +2,7 @@
 
  X=[];
  H=uicontrol('Style','popup','Position',[400,550,100,50],'String','Guitar|Clarinet|Trumpet|Tone');
- pause; I=get(H,'Value)
+ pause; I=get(H,'Value')
  
  uicontrol('Style','Pushbutton','Position',[050 250 100 50],'String','G','Callback', 'Z=cos(2*pi*392*[1:2000]/7999); X=[X Z]; sound(Z,7999);');
  uicontrol('Style','Pushbutton','Position',[150 250 100 50],'String','A','Callback', 'Z=cos(2*pi*440*[1:2000]/7999); X=[X Z]; sound(Z,7999);');
