@@ -15,23 +15,23 @@
  uicontrol('Style','Pushbutton','Position',[650 250 100 50],'String','F','Callback', 'Z=Y((I-1)*13*32768+10*32768+1:(I-1)*13*32768+32768*11); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
  uicontrol('Style','Pushbutton','Position',[750 250 100 50],'String','G','Callback', 'Z=Y((I-1)*13*32768+12*32768+1:(I-1)*13*32768+32768*13); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
  
- uicontrol('Style','Pushbutton','Position',[050 300 100 50],'String','HALF','Callback', 'Z=cos(2*pi*415*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[150 300 100 50],'String','HALF','Callback', 'Z=cos(2*pi*466*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[250 300 100 50],'String','HALF','Callback', 'Z=cos(2*pi*554*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[350 300 100 50],'String','HALF','Callback', 'Z=cos(2*pi*622*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[450 300 100 50],'String','HALF','Callback', 'Z=cos(2*pi*740*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[550 300 100 50],'String','HALF','Callback', 'Z=cos(2*pi*554*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[650 300 100 50],'String','HALF','Callback', 'Z=cos(2*pi*622*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[750 300 100 50],'String','HALF','Callback', 'Z=cos(2*pi*740*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[050 300 100 50],'String','HALF','Callback', 'Z=Y((I-1)*13*32768+1:(I-1)*13*32768+16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[150 300 100 50],'String','HALF','Callback', 'Z=Y((I-1)*13*32768+2*32768+1:(I-1)*13*32768+2*32768+16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[250 300 100 50],'String','HALF','Callback', 'Z=Y((I-1)*13*32768+4*32768+1:(I-1)*13*32768+4*32768+16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[350 300 100 50],'String','HALF','Callback', 'Z=Y((I-1)*13*32768+5*32768+1:(I-1)*13*32768+5*32768+16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[450 300 100 50],'String','HALF','Callback', 'Z=Y((I-1)*13*32768+7*32768+1:(I-1)*13*32768+7*32768+16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[550 300 100 50],'String','HALF','Callback', 'Z=Y((I-1)*13*32768+9*32768+1:(I-1)*13*32768+9*32768+16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[650 300 100 50],'String','HALF','Callback', 'Z=Y((I-1)*13*32768+10*32768+1:(I-1)*13*32768+10*32768+16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[750 300 100 50],'String','HALF','Callback', 'Z=Y((I-1)*13*32768+12*32768+1:(I-1)*13*32768+12*32768+16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
  
- uicontrol('Style','Pushbutton','Position',[050 350 100 50],'String','QUARTER','Callback', 'Z=cos(2*pi*415*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[150 350 100 50],'String','QUARTER','Callback', 'Z=cos(2*pi*466*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[250 350 100 50],'String','QUARTER','Callback', 'Z=cos(2*pi*554*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[350 350 100 50],'String','QUARTER','Callback', 'Z=cos(2*pi*622*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[450 350 100 50],'String','QUARTER','Callback', 'Z=cos(2*pi*740*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[550 350 100 50],'String','QUARTER','Callback', 'Z=cos(2*pi*554*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[650 350 100 50],'String','QUARTER','Callback', 'Z=cos(2*pi*622*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[750 350 100 50],'String','QUARTER','Callback', 'Z=cos(2*pi*740*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[050 350 100 50],'String','QUARTER','Callback', 'Z=Y((I-1)*13*32768+1:(I-1)*13*32768+8192); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[150 350 100 50],'String','QUARTER','Callback', 'Z=Y((I-1)*13*32768+2*32768+1:(I-1)*13*32768+2*32768+8192); X = [X Z]; X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[250 350 100 50],'String','QUARTER','Callback', 'Z=Y((I-1)*13*32768+4*32768+1:(I-1)*13*32768+4*32768+8192); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[350 350 100 50],'String','QUARTER','Callback', 'Z=Y((I-1)*13*32768+5*32768+1:(I-1)*13*32768+5*32768+8192); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[450 350 100 50],'String','QUARTER','Callback', 'Z=Y((I-1)*13*32768+7*32768+1:(I-1)*13*32768+7*32768+8192); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[550 350 100 50],'String','QUARTER','Callback', 'Z=Y((I-1)*13*32768+9*32768+1:(I-1)*13*32768+9*32768+8192); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[650 350 100 50],'String','QUARTER','Callback', 'Z=Y((I-1)*13*32768+10*32768+1:(I-1)*13*32768+10*32768+8192); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[750 350 100 50],'String','QUARTER','Callback', 'Z=Y((I-1)*13*32768+12*32768+1:(I-1)*13*32768+12*32768+8192); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
  
  uicontrol('Style','Pushbutton','Position',[100 400 100 50],'String','G#/Ab','Callback', 'Z=Y((I-1)*13*32768+32768+1:(I-1)*13*32768+32768*2); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
  uicontrol('Style','Pushbutton','Position',[200 400 100 50],'String','A#/Bb','Callback', 'Z=Y((I-1)*13*32768+3*32768+1:(I-1)*13*32768+32768*4); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
@@ -39,17 +39,17 @@
  uicontrol('Style','Pushbutton','Position',[500 400 100 50],'String','D#/Eb','Callback', 'Z=Y((I-1)*13*32768+8*32768+1:(I-1)*13*32768+32768*9); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
  uicontrol('Style','Pushbutton','Position',[700 400 100 50],'String','F#/Gb','Callback', 'Z=Y((I-1)*13*32768+11*32768+1:(I-1)*13*32768+32768*12); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
  
- uicontrol('Style','Pushbutton','Position',[100 450 100 50],'String','HALF','Callback', 'Z=cos(2*pi*415*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[200 450 100 50],'String','HALF','Callback', 'Z=cos(2*pi*466*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[400 450 100 50],'String','HALF','Callback', 'Z=cos(2*pi*554*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[500 450 100 50],'String','HALF','Callback', 'Z=cos(2*pi*622*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[700 450 100 50],'String','HALF','Callback', 'Z=cos(2*pi*740*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[100 450 100 50],'String','HALF','Callback', 'Z=Y((I-1)*13*32768+32768+1:(I-1)*13*32768+32768+16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[200 450 100 50],'String','HALF','Callback', 'Z=Y((I-1)*13*32768+3*32768+1:(I-1)*13*32768+3*32768+16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[400 450 100 50],'String','HALF','Callback', 'Z=Y((I-1)*13*32768+6*32768+1:(I-1)*13*32768+6*32768+16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[500 450 100 50],'String','HALF','Callback', 'Z=Y((I-1)*13*32768+8*32768+1:(I-1)*13*32768+8*32768+16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[700 450 100 50],'String','HALF','Callback', 'Z=Y((I-1)*13*32768+11*32768+1:(I-1)*13*32768+11*32768+16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
  
- uicontrol('Style','Pushbutton','Position',[100 500 100 50],'String','QUARTER','Callback', 'Z=cos(2*pi*415*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[200 500 100 50],'String','QUARTER','Callback', 'Z=cos(2*pi*466*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[400 500 100 50],'String','QUARTER','Callback', 'Z=cos(2*pi*554*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[500 500 100 50],'String','QUARTER','Callback', 'Z=cos(2*pi*622*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
- uicontrol('Style','Pushbutton','Position',[700 500 100 50],'String','QUARTER','Callback', 'Z=cos(2*pi*740*[1:2000]/7999); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[100 500 100 50],'String','QUARTER','Callback', 'Z=Y((I-1)*13*32768+32768+1:(I-1)*13*32768+ 32768+8192); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[200 500 100 50],'String','QUARTER','Callback', 'Z=Y((I-1)*13*32768+3*32768+1:(I-1)*13*32768+3*32768+8192); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[400 500 100 50],'String','QUARTER','Callback', 'Z=Y((I-1)*13*32768+6*32768+1:(I-1)*13*32768+6*32768+8192); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[500 500 100 50],'String','QUARTER','Callback', 'Z=Y((I-1)*13*32768+8*32768+1:(I-1)*13*32768+8*32768+8192); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ uicontrol('Style','Pushbutton','Position',[700 500 100 50],'String','QUARTER','Callback', 'Z=Y((I-1)*13*32768+11*32768+1:(I-1)*13*32768+11*32768+8192); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
  
  uicontrol('Style','Pushbutton','Position',[050 150 800 100],'String','END','Callback', 'sound(X, 44100); save synthesizer.mat X;');
  uicontrol('Style','Pushbutton','Position',[050 050 400 100],'String','CLEAR','Callback', 'X=[]');
