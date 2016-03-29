@@ -51,6 +51,7 @@
  uicontrol('Style','Pushbutton','Position',[500 500 100 50],'String','QUARTER','Callback', 'Z=Y((I-1)*13*32768+8*32768+1:(I-1)*13*32768+8*32768+8192); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
  uicontrol('Style','Pushbutton','Position',[700 500 100 50],'String','QUARTER','Callback', 'Z=Y((I-1)*13*32768+11*32768+1:(I-1)*13*32768+11*32768+8192); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
  
- uicontrol('Style','Pushbutton','Position',[050 150 800 100],'String','END','Callback', 'sound(X, 44100); save synthesizer.mat X;');
+ filename = 'music.wav';
+ uicontrol('Style','Pushbutton','Position',[050 150 800 100],'String','END','Callback', 'sound(X, 44100); save synthesizer.mat X; audiowrite(filename, X, FS);');
  uicontrol('Style','Pushbutton','Position',[050 050 400 100],'String','CLEAR','Callback', 'X=[]');
  uicontrol('Style','Pushbutton','Position',[450 050 400 100],'String','BACKSPACE','Callback', 'X(end)=[]')
