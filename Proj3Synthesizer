@@ -108,5 +108,5 @@ uicontrol('Style','Pushbutton','Position',[900 350 100 50],'String','Quarter res
  filename = 'music.wav';
  uicontrol('Style','Pushbutton','Position',[050 150 800 100],'String','END','Callback', 'sound(X, 44100); save synthesizer.mat X; audiowrite(filename, X, FS);');
  uicontrol('Style','Pushbutton','Position',[050 050 400 100],'String','CLEAR','Callback', 'X=[]');
- uicontrol('Style','P ushbutton','Position',[450 050 400 100],'String','BACKSPACE','Callback', 'X(end)=[]') 
+ uicontrol('Style','Pushbutton','Position',[450 050 400 100],'String','BACKSPACE','Callback', 'X(end)=[]') 
 
