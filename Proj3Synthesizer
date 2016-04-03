@@ -1,12 +1,31 @@
 %Synthesizer for Engineering 100- Project 1
 fig=gcf;
-fig.Position= [1000 350 900 620];
+fig.Position= [1000 350 1000 620];
 fig.Name='Synthesizer';
 fig.NumberTitle='off';
 fig.ToolBar='none';
 fig.MenuBar='none';
-fig.Color=[1 1 1];
-
+%fig.Color=[.2 .2 .2];
+prompt='What color would you like the background to be? Your choices are yellow, magenta, cyan, red, green, blue, white or black.\n';
+pause;
+color = input(prompt,'s');
+if strcmp('yellow',color) == 1
+        fig.Color=[1 1 0];
+elseif strcmp('magenta',color) == 1
+        fig.Color=[1 0 1];
+elseif strcmp('cyan',color) == 1
+        fig.Color=[0 1 1];
+elseif strcmp('red',color) == 1
+        fig.Color=[1 0 0];
+elseif strcmp('green',color) == 1
+        fig.Color=[0 1 0];
+elseif strcmp('blue',color) == 1
+        fig.Color=[0 0 1];
+elseif strcmp('white',color) == 1
+        fig.Color=[1 1 1];
+elseif strcmp('black',color) == 1
+        fig.Color=[0 0 0];
+end 
 
 [Y, FS] = audioread('proj3.wav');
  load('synth.mat')
@@ -44,6 +63,11 @@ Y = [Y; S];
  uicontrol('Style','Pushbutton','Position',[550 250 100 50],'String','E','Callback', 'Z=Y((I-1)*13*32768+9*32768+1:(I-1)*13*32768+32768*10); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
  uicontrol('Style','Pushbutton','Position',[650 250 100 50],'String','F','Callback', 'Z=Y((I-1)*13*32768+10*32768+1:(I-1)*13*32768+32768*11); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
  uicontrol('Style','Pushbutton','Position',[750 250 100 50],'String','G','Callback', 'Z=Y((I-1)*13*32768+12*32768+1:(I-1)*13*32768+32768*13); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ 
+uicontrol('Style','Pushbutton','Position',[900 250 100 50],'String','Whole rest','Callback', 'Z=zeros(1,32768); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+uicontrol('Style','Pushbutton','Position',[900 300 100 50],'String','Half rest','Callback', 'Z=zeros(1,16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);'); 
+uicontrol('Style','Pushbutton','Position',[900 350 100 50],'String','Quarter rest','Callback', 'Z=zeros(1,8192); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
+ 
  
  uicontrol('Style','Pushbutton','Position',[050 300 100 50],'String','HALF','Callback', 'Z=Y((I-1)*13*32768+1:(I-1)*13*32768+16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
  uicontrol('Style','Pushbutton','Position',[150 300 100 50],'String','HALF','Callback', 'Z=Y((I-1)*13*32768+2*32768+1:(I-1)*13*32768+2*32768+16384); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
@@ -85,3 +109,4 @@ Y = [Y; S];
  uicontrol('Style','Pushbutton','Position',[050 150 800 100],'String','END','Callback', 'sound(X, 44100); save synthesizer.mat X; audiowrite(filename, X, FS);');
  uicontrol('Style','Pushbutton','Position',[050 050 400 100],'String','CLEAR','Callback', 'X=[]');
  uicontrol('Style','P ushbutton','Position',[450 050 400 100],'String','BACKSPACE','Callback', 'X(end)=[]') 
+
