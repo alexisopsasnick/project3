@@ -46,23 +46,54 @@ h.Color='none';
 h.MarkerFaceColor='none';
 h.MarkerSize=10;
 
-subplot(111), h, axis([0 length(note) 0 4])
+subplot(111), h, axis([0 (length(Z)+1) 0 4])
 hold on;
 ha=gca;
 uistack(ha,'top')
 ha2=axes('position',[0.005, 0.125, 0.1,0.75]);
-[x, map]=imread('cleff.png');
+[x, map]=imread('whole.jpg');
 image(x)
 colormap(map)
 set(ha2,'handlevisibility','off','visible','off')
 
-a=1;
-img=imread('note1.jpg');
-disp(Z)
-while a<=length(Z)
-    if (isinf(Z(a))==0)
-        image([(a-0.1) (a+0.1)], [(Z(a)+1) (Z(a))], img)
+whole=imread('whole.jpg');
+half=imread('half.jpg');
+quarter=imread('quarter.jpg');
+
+stepIndex=1;
+noteIndex=1;
+stepTemp=stepIndex;
+noteslength=size(note);
+i=1;
+while(noteIndex<=noteslength(1))
+    if (strcmp(note(noteIndex,1),'w'))
+        for i=[stepIndex:(stepTemp+3)]
+            if (isinf(Z(i))==0)
+                image([(i-0.2) (i+0.2)], [(Z(i)+0.2) (Z(i)-0.2)], whole)
+            end
+        end
+        stepIndex=stepTemp+4;
+        stepTemp=stepIndex;
+
+    elseif (strcmp(note(noteIndex,1),'h'))
+        for i=[stepIndex:(stepTemp+1)]
+            if (isinf(Z(i))==0)
+                image([(i-0.18) (i+0.18)], [(Z(i)+.8) (Z(i)-.2)], half)
+            end
+        end
+       stepIndex=stepTemp+2;
+       stepTemp=stepIndex;
+
+    elseif (strcmp(note(noteIndex,1),'q'))
+        for i=[stepIndex:(stepTemp)]
+            if (isinf(Z(i))==0)
+                image([(i-0.15) (i+0.15)], [(Z(i)+.85) (Z(i)-.15)], quarter)
+            end
+        end
+        stepIndex=stepIndex+1;
+        stepTemp=stepIndex;
     end
-    a=a+1;
+    noteIndex=noteIndex+1
 end
+  
 set(gca,'YGrid','on','YTick',[0:15], 'GridLineStyle', '-')
