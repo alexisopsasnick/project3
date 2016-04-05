@@ -13,8 +13,10 @@ uicontrol('Style', 'pushbutton', 'Position', [400, 250, 75, 50], 'String', 'blue
 uicontrol('Style', 'pushbutton', 'Position', [250, 200, 112.5, 50], 'String', 'white', 'Backgroundcolor', [1 1 1], 'Callback', 'color = [1 1 1];');
 uicontrol('Style', 'pushbutton', 'Position', [362.5, 200, 112.5, 50], 'String', 'black', 'Backgroundcolor', [0 0 0], 'Callback', 'color = [0 0 0];', 'Foregroundcolor', [1 1 1]);
 value = 'Value';
-uicontrol('Style', 'pushbutton', 'Position', [200, 100, 50, 50], 'String', 'done', 'Callback', ' I = get(H,value); close; proj3Synthesizer;');
+uicontrol('Style', 'pushbutton', 'Position', [200, 100, 50, 50], 'String', 'done', 'Callback', ' I = get(H,value); close; Proj3Synthesizer;');
 
 color = [1 1 1];
+
+
 
 
