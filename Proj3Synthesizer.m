@@ -1,4 +1,4 @@
-%Synthesizer for Engineering 100- Project 3
+%Synthesizer for Engineering 100- Project 1
 
 fig=figure;
 fig.Position= [1000 350 1000 620];
@@ -8,22 +8,22 @@ fig.ToolBar='none';
 fig.MenuBar='none';
 fig.Color=color;
 
-instrument = 'Bass guitar';
+instrument = 'Bass Guitar     ';
 switch(I)
 case 1
-instrument = 'Bass guitar';
+instrument = 'Bass Guitar     ';
 case 2
-instrument = 'Clarinet';
+instrument = 'Clarinet        ';
 case 3
-instrument  = 'Trumpet';
+instrument  = 'Trumpet        ';
 case 4
-instrument = 'Tone';
+instrument = 'Tone            ';
 case 5
 instrument = 'Reverbed Trumpet';
 case 6
-instrument = 'Placeholder';
+instrument = 'Placeholder     ';
 otherwise
-instrument = ' ' ;
+instrument = '                ';
 end
 
 [Y, FS] = audioread('proj3.wav');
@@ -51,7 +51,7 @@ Y=Y';
 Y=[Y O];
 X=[];
 
-uicontrol('Style', 'Text', 'Position', [250 550 150 50], 'String', instrument, 'BackgroundColor', color, 'ForegroundColor', [1 1 1], 'FontWeight', 'bold', 'FontSize', 40);
+uicontrol('Style', 'Text', 'Position', [250 550 500 50], 'String', instrument, 'BackgroundColor', color, 'ForegroundColor', [1 1 1], 'FontWeight', 'bold', 'FontSize', 40);
 uicontrol('Style','Pushbutton','Position',[050 250 100 50],'String','G','Callback', 'Z=Y((I-1)*13*32768+1:(I-1)*13*32768+32768); X=[X Z];   X(end-99:end)=zeros(1,100); sound(Z,44100);');
 uicontrol('Style','Pushbutton','Position',[150 250 100 50],'String','A','Callback', 'Z=Y((I-1)*13*32768+2*32768+1:(I-1)*13*32768+32768*3); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');
 uicontrol('Style','Pushbutton','Position',[250 250 100 50],'String','B','Callback', 'Z=Y((I-1)*13*32768+4*32768+1:(I-1)*13*32768+32768*5); X=[X Z];  X(end-99:end)=zeros(1,100); sound(Z,44100);');

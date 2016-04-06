@@ -25,7 +25,7 @@ else
 note = [note; 'quarter'];
 end
 j=q;
-freqs = [freqs; transcribeOneNote(X)];
+freqs = [freqs; transcribeOneNote(X, instrument)];
 
 elseif(XY(i+h) == 0)
 
@@ -33,7 +33,7 @@ X = XY(i:i+h+100-1);
 note = [note; 'half   '];
 
 j=h;
-freqs = [freqs; transcribeOneNote(X)]; %;0];
+freqs = [freqs; transcribeOneNote(X, instrument)]; %;0];
 
 elseif(XY(i+w) ==0)
 
@@ -42,7 +42,7 @@ X = XY(i:i+w+100-1);
 note = [note; 'whole  '];
 
 j=w;
-freqs = [freqs; transcribeOneNote(X)]; %; 0; 0; 0];
+freqs = [freqs; transcribeOneNote(X, instrument)]; %; 0; 0; 0];
 
 end
 
@@ -77,18 +77,18 @@ stepTemp=stepIndex;
 noteslength=size(note);
 disp(Z)
 while(noteIndex<=noteslength(1))
-    if (strcmp(note(noteIndex,1),'w'))
-                image([(noteIndex-0.2) (noteIndex+0.2)], [(Z(noteIndex)+0.2) (Z(noteIndex)-0.2)], whole)
-    elseif (strcmp(note(noteIndex,1),'h'))
+if (strcmp(note(noteIndex,1),'w'))
+image([(noteIndex-0.2) (noteIndex+0.2)], [(Z(noteIndex)+0.2) (Z(noteIndex)-0.2)], whole)
+elseif (strcmp(note(noteIndex,1),'h'))
 
-                image([(noteIndex-0.18) (noteIndex+0.18)], [(Z(noteIndex)+.8) (Z(noteIndex)-.2)], half);
+image([(noteIndex-0.18) (noteIndex+0.18)], [(Z(noteIndex)+.8) (Z(noteIndex)-.2)], half);
 
-    elseif (strcmp(note(noteIndex,1),'q'))
-                image([(noteIndex-0.15) (noteIndex+0.15)], [(Z(noteIndex)+.85) (Z(noteIndex)-.15)], quarter);
-    elseif (strcmp(note(noteIndex,1),'r'))
-                image([(noteIndex-0.15) (noteIndex+0.15)], [(2.5) (1.5)], rest);
-    end
-    noteIndex=noteIndex+1;
+elseif (strcmp(note(noteIndex,1),'q'))
+image([(noteIndex-0.15) (noteIndex+0.15)], [(Z(noteIndex)+.85) (Z(noteIndex)-.15)], quarter);
+elseif (strcmp(note(noteIndex,1),'r'))
+image([(noteIndex-0.15) (noteIndex+0.15)], [(2.5) (1.5)], rest);
+end
+noteIndex=noteIndex+1;
 end
 
 %set(gca,'YGrid','on','YTick',[0:15], 'GridLineStyle', '-')
