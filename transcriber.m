@@ -20,7 +20,7 @@ j=0;
 if(XY(i+q) == 0 || all(XY(i:i+q+100-1) == 0))
 X = XY(i:i+q+100-1);
 if(all(X == 0))
-note = [note;'qrest  '];
+note = [note;'rest   '];
 else
 note = [note; 'quarter'];
 end
@@ -50,18 +50,18 @@ end
 i = i +100+j;
 end
 
-Z = round(12*log2(freqs/440)+6)/4;
+Z = (12*log2(freqs/440)+6)/4;
 h=stem(Z);
 h.Color='none';
 h.MarkerFaceColor='none';
 h.MarkerSize=10;
 
-subplot(111), h; axis([0 (length(Z)+1) 0 4]);
+subplot(111), h, axis([0 (length(Z)+1) 0 4]);
 hold on;
 ha=gca;
 uistack(ha,'top')
-ha2=axes('position',[0.005, 0.125, 0.1,0.75]);
-[x, map]=imread('whole.jpg');
+ha2=axes('position',[0.005, 0.125, 0.1, 0.8]);
+[x, map]=imread('cleff.jpg');
 image(x);
 colormap(map);
 set(ha2,'handlevisibility','off','visible','off');
@@ -69,41 +69,26 @@ set(ha2,'handlevisibility','off','visible','off');
 whole=imread('whole.jpg');
 half=imread('half.jpg');
 quarter=imread('quarter.jpg');
+rest=imread('quarterrest.jpg');
 
 stepIndex=1;
 noteIndex=1;
 stepTemp=stepIndex;
 noteslength=size(note);
-i=1;
+disp(Z)
 while(noteIndex<=noteslength(1))
-if (strcmp(note(noteIndex,1),'w'))
-for i=[stepIndex:(stepTemp+3)]
-if (isinf(Z(i))==0)
-image([(i-0.2) (i+0.2)], [(Z(i)+0.2) (Z(i)-0.2)], whole)
-end
-end
-stepIndex=stepTemp+4;
-stepTemp=stepIndex;
+    if (strcmp(note(noteIndex,1),'w'))
+                image([(noteIndex-0.2) (noteIndex+0.2)], [(Z(noteIndex)+0.2) (Z(noteIndex)-0.2)], whole)
+    elseif (strcmp(note(noteIndex,1),'h'))
 
-elseif (strcmp(note(noteIndex,1),'h'))
-for i=[stepIndex:(stepTemp+1)]
-if (isinf(Z(i))==0)
-image([(i-0.18) (i+0.18)], [(Z(i)+.8) (Z(i)-.2)], half);
-end
-end
-stepIndex=stepTemp+2;
-stepTemp=stepIndex;
+                image([(noteIndex-0.18) (noteIndex+0.18)], [(Z(noteIndex)+.8) (Z(noteIndex)-.2)], half);
 
-elseif (strcmp(note(noteIndex,1),'q'))
-for i=[stepIndex:(stepTemp)]
-if (isinf(Z(i))==0)
-image([(i-0.15) (i+0.15)], [(Z(i)+.85) (Z(i)-.15)], quarter);
-end
-end
-stepIndex=stepIndex+1;
-stepTemp=stepIndex;
-end
-noteIndex=noteIndex+1;
+    elseif (strcmp(note(noteIndex,1),'q'))
+                image([(noteIndex-0.15) (noteIndex+0.15)], [(Z(noteIndex)+.85) (Z(noteIndex)-.15)], quarter);
+    elseif (strcmp(note(noteIndex,1),'r'))
+                image([(noteIndex-0.15) (noteIndex+0.15)], [(2.5) (1.5)], rest);
+    end
+    noteIndex=noteIndex+1;
 end
 
 %set(gca,'YGrid','on','YTick',[0:15], 'GridLineStyle', '-')
