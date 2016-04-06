@@ -17,20 +17,30 @@ i = 1;
 freqs = [];
 while(i <= length(XY))
 j=0;
-if(XY(i+q) == 0)
-note = [note; 'quarter'];
+if(XY(i+q) == 0 || all(XY(i:i+q+100-1) == 0))
 X = XY(i:i+q+100-1);
+if(all(X == 0))
+note = [note;'qrest  '];
+else
+note = [note; 'quarter'];
+end
 j=q;
 freqs = [freqs; transcribeOneNote(X)];
+
 elseif(XY(i+h) == 0)
-note = [note; 'half   '];
+
 X = XY(i:i+h+100-1);
+note = [note; 'half   '];
+
 j=h;
 freqs = [freqs; transcribeOneNote(X);0];
 
 elseif(XY(i+w) ==0)
-note = [note; 'whole  '];
+
 X = XY(i:i+w+100-1);
+
+note = [note; 'whole  '];
+
 j=w;
 freqs = [freqs; transcribeOneNote(X); 0; 0; 0];
 
@@ -46,7 +56,7 @@ h.Color='none';
 h.MarkerFaceColor='none';
 h.MarkerSize=10;
 
-subplot(111), h, axis([0 (length(Z)+1) 0 4]);
+subplot(111), h; axis([0 (length(Z)+1) 0 4]);
 hold on;
 ha=gca;
 uistack(ha,'top')
