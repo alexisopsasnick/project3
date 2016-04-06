@@ -33,7 +33,7 @@ X = XY(i:i+h+100-1);
 note = [note; 'half   '];
 
 j=h;
-freqs = [freqs; transcribeOneNote(X);0];
+freqs = [freqs; transcribeOneNote(X)]; %;0];
 
 elseif(XY(i+w) ==0)
 
@@ -42,7 +42,7 @@ X = XY(i:i+w+100-1);
 note = [note; 'whole  '];
 
 j=w;
-freqs = [freqs; transcribeOneNote(X); 0; 0; 0];
+freqs = [freqs; transcribeOneNote(X)]; %; 0; 0; 0];
 
 end
 
