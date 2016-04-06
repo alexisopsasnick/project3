@@ -1,4 +1,4 @@
-clear;
+
 
 fig=gcf;
 fig.Position= [250 450 650 200];
@@ -25,7 +25,7 @@ else
 note = [note; 'quarter'];
 end
 j=q;
-freqs = [freqs; transcribeOneNote(X, instrument)];
+freqs = [freqs; transcribeOneNote(X, I)];
 
 elseif(XY(i+h) == 0)
 
@@ -33,7 +33,7 @@ X = XY(i:i+h+100-1);
 note = [note; 'half   '];
 
 j=h;
-freqs = [freqs; transcribeOneNote(X, instrument)]; %;0];
+freqs = [freqs; transcribeOneNote(X, I)]; %;0];
 
 elseif(XY(i+w) ==0)
 
@@ -42,7 +42,7 @@ X = XY(i:i+w+100-1);
 note = [note; 'whole  '];
 
 j=w;
-freqs = [freqs; transcribeOneNote(X, instrument)]; %; 0; 0; 0];
+freqs = [freqs; transcribeOneNote(X, I)]; %; 0; 0; 0];
 
 end
 
