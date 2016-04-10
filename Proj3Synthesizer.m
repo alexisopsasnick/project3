@@ -1,4 +1,4 @@
-%Synthesizer for Engineering 100- Project 1
+%Synthesizer for Engineering 100- Project 3
 
 fig=figure;
 fig.Position= [1000 350 1000 620];

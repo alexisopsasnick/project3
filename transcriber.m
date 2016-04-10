@@ -1,5 +1,5 @@
 
-
+close;
 fig=gcf;
 fig.Position= [250 450 650 200];
 fig.Color=[1 1 1];
